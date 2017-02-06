@@ -584,6 +584,7 @@
 				36420F8B1E2473F70017C494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36420F8C1E2473F70017C494 /* Build configuration list for PBXNativeTarget "CollectionsOfAnimationTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +593,7 @@
 				36420F8E1E2473F70017C494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		36420F8F1E2473F70017C494 /* Build configuration list for PBXNativeTarget "CollectionsOfAnimationUITests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +602,7 @@
 				36420F911E2473F70017C494 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

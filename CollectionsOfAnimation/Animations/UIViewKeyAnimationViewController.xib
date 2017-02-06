@@ -13,8 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewKeyAnimationViewController">
             <connections>
                 <outlet property="bottomView" destination="QaW-XE-0Dm" id="3IZ-yh-Mqw"/>
-                <outlet property="tempView" destination="6tp-qm-wnW" id="tsb-oS-1R7"/>
-                <outlet property="tempView1" destination="CTa-E2-Cou" id="Y9b-mu-ivr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -25,27 +23,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QaW-XE-0Dm">
                     <rect key="frame" x="100" y="150" width="115" height="142"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTa-E2-Cou">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="142"/>
-                            <color key="backgroundColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tp-qm-wnW">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="142"/>
-                            <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        </view>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="CTa-E2-Cou" firstAttribute="leading" secondItem="QaW-XE-0Dm" secondAttribute="leading" id="27y-m0-qbA"/>
-                        <constraint firstItem="6tp-qm-wnW" firstAttribute="leading" secondItem="QaW-XE-0Dm" secondAttribute="leading" id="LUa-o7-01h"/>
-                        <constraint firstItem="CTa-E2-Cou" firstAttribute="top" secondItem="QaW-XE-0Dm" secondAttribute="top" id="aAB-Y0-mKP"/>
-                        <constraint firstAttribute="bottom" secondItem="6tp-qm-wnW" secondAttribute="bottom" id="irS-Qm-7wS"/>
-                        <constraint firstAttribute="bottom" secondItem="CTa-E2-Cou" secondAttribute="bottom" id="iw4-xy-KXf"/>
-                        <constraint firstAttribute="trailing" secondItem="6tp-qm-wnW" secondAttribute="trailing" id="nNS-me-CzR"/>
-                        <constraint firstAttribute="trailing" secondItem="CTa-E2-Cou" secondAttribute="trailing" id="s6i-Mq-jt7"/>
-                        <constraint firstItem="6tp-qm-wnW" firstAttribute="top" secondItem="QaW-XE-0Dm" secondAttribute="top" id="wD0-f4-v0b"/>
-                    </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZ2-Dp-5i0">
                     <rect key="frame" x="0.0" y="627" width="94" height="40"/>

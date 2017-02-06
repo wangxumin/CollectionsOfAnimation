@@ -143,7 +143,7 @@ typedef enum : NSUInteger {
     CATransition *animation = [CATransition animation];
     
     //设置运动时间
-    animation.duration = 0.7;
+    animation.duration = 0.5;
     
     //设置运动type
     animation.type = type;

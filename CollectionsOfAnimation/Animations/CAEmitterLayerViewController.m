@@ -22,7 +22,7 @@
     self.snowLayer.emitterShape = kCAEmitterLayerCircle;
     self.snowLayer.renderMode = kCAEmitterLayerAdditive;//粒子的混合模式
     NSMutableArray *array = [NSMutableArray array];
-    NSArray *images = @[@"xuhua2.png",@"xuehua3.jpg"];
+    NSArray *images = @[@"xuehua2.png",@"xuehua3.jpg"];
     for (int i = 0; i < images.count; i++) {
         //发射单元
         CAEmitterCell *cell = [CAEmitterCell emitterCell];

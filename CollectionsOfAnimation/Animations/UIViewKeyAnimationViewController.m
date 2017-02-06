@@ -10,8 +10,8 @@
 
 @interface UIViewKeyAnimationViewController ()
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet UIView *tempView;
-@property (weak, nonatomic) IBOutlet UIView *tempView1;
+@property (strong, nonatomic) IBOutlet UIView *tempView;
+@property (strong, nonatomic) IBOutlet UIView *tempView1;
 @property (nonatomic , strong) CALayer *layer;
 @end
 
@@ -21,10 +21,27 @@
     self.view = [[NSBundle mainBundle] loadNibNamed:@"UIViewKeyAnimationViewController" owner:self options:nil].firstObject;
 }
 
+- (UIView *)tempView{
+    if (!_tempView) {
+        self.tempView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tempView1.frame.size.width, self.tempView1.frame.size.height)];
+        self.tempView.backgroundColor = [UIColor redColor];
+        [self.bottomView addSubview:_tempView];
+    }
+    return _tempView;
+}
+
+- (UIView *)tempView1{
+    if (!_tempView1) {
+        self.tempView1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.bottomView.frame.size.width, self.bottomView.frame.size.height)];
+        self.tempView1.backgroundColor = [UIColor brownColor];
+    }
+    return _tempView1;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.bottomView = self.tempView1;
+    NSLog(@"%@",self.tempView);
 }
 
 - (IBAction)keyAnimation:(UIButton *)sender {
@@ -144,18 +161,22 @@
     [UIView setAnimationDuration:3.0];
     self.tempView.transform = CGAffineTransformMakeRotation(M_PI);
     [UIView commitAnimations];
+    
 }
+
 
 //UIView的转场动画
 - (IBAction)transition:(UIButton *)sender {
     sender.selected = !sender.selected;
     if (sender.selected) {
-        [UIView transitionFromView:self.tempView toView:self.tempView1 duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
-            [self.bottomView addSubview:_tempView];
+        [UIView transitionFromView:self.tempView1 toView:self.tempView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight completion:^(BOOL finished) {
+
+//            self.bottomView = self.tempView1;
+            
         }];
     }else{
-        [UIView transitionFromView:self.tempView1 toView:self.tempView duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
-            [self.bottomView addSubview:_tempView1];
+        [UIView transitionFromView:self.tempView toView:self.tempView1 duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft completion:^(BOOL finished) {
+//            [self.bottomView addSubview:_tempView1];
         }];
     }
 }

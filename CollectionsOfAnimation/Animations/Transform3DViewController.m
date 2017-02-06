@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *view5;
 @property (weak, nonatomic) IBOutlet UIView *view6;
 @property (nonatomic , assign) CGFloat tempAngel;
+@property (nonatomic , assign) CATransform3D tempTransform;
 @end
 
 @implementation Transform3DViewController
@@ -59,13 +60,14 @@
 }
 - (void)panGestureRecognizerAction:(UIPanGestureRecognizer *)sender{
     CGPoint point = [sender translationInView:self.containerView];
-    CGFloat angel1 = self.tempAngel + (point.x / 70);
+    CGFloat angel1 = self.tempAngel + (point.x / 70.0);
     CGFloat angel2 = self.tempAngel - (point.y / 70.0);
     CATransform3D transform = CATransform3DIdentity;
-    transform.m34 = -1/700;
+    transform.m34 = -1/3000;
     transform = CATransform3DRotate(transform, angel1, 0, 1, 0);
     transform = CATransform3DRotate(transform, angel2, 1, 0, 0);
     self.containerView.layer.sublayerTransform = transform;
+    self.tempTransform = transform;
     NSLog(@"%f==%f",point.x,point.y);
 }
 
